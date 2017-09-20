@@ -1,10 +1,13 @@
 import React from 'react';
 
-const VideoListItem = ({ video }) => {
+const VideoListItem = ({ video, onVideoClick }) => {
 	const imageUrl = video.snippet.thumbnails.default.url;
 
 	return (
-		<li>
+		{
+			// passed done this function from App to change state
+		}
+		<li onClick={() => onVideoClick(video)}>
 			<div>
 				<img src={imageUrl} alt=""/>
 			</div>

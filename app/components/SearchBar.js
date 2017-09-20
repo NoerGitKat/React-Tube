@@ -3,7 +3,7 @@ import React from 'react';
 const SearchBar = () => {
 	return (
 		<div>
-			<h3>Hello from SearchBar!</h3>
+			<input type="text" placeholder='Search videos...'/>
 		</div>
 	)
 };

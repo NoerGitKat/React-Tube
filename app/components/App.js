@@ -14,12 +14,14 @@ class App extends React.Component {
 		super(props);
 
 		this.state = {
-			videos: []
+			videos: [],
+			selectedVideo: null		//changes when user clicks videolistitem
 		};
 
 		YTSearch({key: API_KEY, term:'evolution'}, (videos) => {
 			this.setState({
-				videos: videos
+				videos: videos,
+				selectedVideo: videos[0]
 			})
 		});
 	};
@@ -29,8 +31,10 @@ class App extends React.Component {
 			<div>
 				<h1>Hello!</h1>
 				<SearchBar />
-				<VideoPlayer video={this.state.videos[0]}/>
-				<VideoList videos={this.state.videos} />
+				<VideoPlayer video={this.state.selectedVideo}/>
+				<VideoList 
+				onVideoClick={selectedVideo => this.setState({selectedVideo})}
+				videos={this.state.videos} />
 			</div>
 		);
 	};
