@@ -4,9 +4,6 @@ const VideoListItem = ({ video, onVideoClick }) => {
 	const imageUrl = video.snippet.thumbnails.default.url;
 
 	return (
-		{
-			// passed done this function from App to change state
-		}
 		<li onClick={() => onVideoClick(video)}>
 			<div>
 				<img src={imageUrl} alt=""/>

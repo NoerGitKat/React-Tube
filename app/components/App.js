@@ -28,8 +28,7 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<h1>Hello!</h1>
+			<div className='app-container'>
 				<SearchBar />
 				<VideoPlayer video={this.state.selectedVideo}/>
 				<VideoList 
