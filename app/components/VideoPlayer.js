@@ -1,9 +1,19 @@
 import React from 'react';
 
-const VideoPlayer = () => {
+const VideoPlayer = ({ video }) => {
+	if(!video) {
+		return <div>Loading...</div>
+	}
+	const videoId = video.id.videoId;
+	const url = `https://www.youtube.com/embed/${videoId}`;
+
 	return (
 		<div>
-			<h3>Hello from VideoPlayer!</h3>
+			<iframe src={url}></iframe>
+			<div className="details">
+				<h3>{video.snippet.title}</h3>
+				<h3>{video.snippet.description}</h3>
+			</div>
 		</div>
 	)
 };

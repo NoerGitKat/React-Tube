@@ -29,6 +29,7 @@ class App extends React.Component {
 			<div>
 				<h1>Hello!</h1>
 				<SearchBar />
+				<VideoPlayer video={this.state.videos[0]}/>
 				<VideoList videos={this.state.videos} />
 			</div>
 		);

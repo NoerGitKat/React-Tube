@@ -1,10 +1,17 @@
 import React from 'react';
 
-const VideoListItem = () => {
+const VideoListItem = ({ video }) => {
+	const imageUrl = video.snippet.thumbnails.default.url;
+
 	return (
-		<div>
-			<h3>Hello from VideoListItem!</h3>
-		</div>
+		<li>
+			<div>
+				<img src={imageUrl} alt=""/>
+			</div>
+			<div>
+				<h3>{video.snippet.title}</h3>
+			</div>
+		</li>
 	)
 };
 
