@@ -18,18 +18,23 @@ class App extends React.Component {
 			selectedVideo: null		//changes when user clicks videolistitem
 		};
 
-		YTSearch({key: API_KEY, term:'evolution'}, (videos) => {
+		this.videoSearch = this.videoSearch.bind(this);
+		this.videoSearch('pizza');
+	};
+
+	videoSearch(term) {
+		YTSearch({key: API_KEY, term: term}, (videos) => {
 			this.setState({
 				videos: videos,
 				selectedVideo: videos[0]
 			})
 		});
-	};
+	}
 
 	render() {
 		return (
 			<div className='app-container'>
-				<SearchBar />
+				<SearchBar onSearchTermChange={term => this.videoSearch(term)}/>
 				<VideoPlayer video={this.state.selectedVideo}/>
 				<VideoList 
 				onVideoClick={selectedVideo => this.setState({selectedVideo})}

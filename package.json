@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/NoerGitKat/React-Tube#readme",
   "dependencies": {
+    "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "youtube-api-search": "0.0.5"

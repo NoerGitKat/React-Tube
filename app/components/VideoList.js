@@ -1,5 +1,6 @@
 import React from 'react';
 import VideoListItem from './VideoListItem';
+import PropTypes from 'prop-types';
 
 const VideoList = ({ videos, onVideoClick }) => {
 	const videoItems = videos.map((video) => {
@@ -14,6 +15,11 @@ const VideoList = ({ videos, onVideoClick }) => {
 			{videoItems}
 		</ul>
 	);
+};
+
+VideoList.propTypes = {
+	videos: PropTypes.array.isRequired,
+	onVideoClick: PropTypes.func.isRequired
 };
 
 export default VideoList;

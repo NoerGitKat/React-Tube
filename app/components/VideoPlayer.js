@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const VideoPlayer = ({ video }) => {
 	//if no video will only return this message
@@ -20,5 +21,9 @@ const VideoPlayer = ({ video }) => {
 		</div>
 	)
 };
+
+VideoPlayer.propTypes = {
+	video: PropTypes.object
+}
 
 export default VideoPlayer;

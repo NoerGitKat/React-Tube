@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const VideoListItem = ({ video, onVideoClick }) => {
 	const imageUrl = video.snippet.thumbnails.default.url;
@@ -13,6 +14,11 @@ const VideoListItem = ({ video, onVideoClick }) => {
 			</div>
 		</li>
 	)
+};
+
+VideoListItem.propTypes = {
+	video: PropTypes.object.isRequired,
+	onVideoClick: PropTypes.func.isRequired
 };
 
 export default VideoListItem;
